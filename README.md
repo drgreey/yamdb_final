@@ -2,6 +2,8 @@
 ### Проект YaMDb собирает отзывы пользователей на произведения.
 # API для проекта YaMDB в контейнере Docker
 [![yamdb project workflow](https://github.com/drgreey/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg?branch=main)](https://github.com/drgreey/yamdb_final/actions/workflows/yamdb_workflow.yml)
+### Ссылка на сайт
+Проект был запущен и доступен по [адресу](http://158.160.35.133/).
 ### Шаблон наполнения env-файла:
 ```
 DB_ENGINE=django.db.backends.postgresql
@@ -36,6 +38,16 @@ docker-compose exec web python manage.py createsuperuser
 
 Подгрузка статики:
 docker-compose exec web python manage.py collectstatic --no-input 
+```
+### Команды для заполнения базы данными
+- Заполнить базу данными
+- Создать резервную копию данных:
+```bash
+docker-compose exec web python manage.py dumpdata > fixtures.json
+```
+- Остановить и удалить неиспользуемые элементы инфраструктуры Docker:
+```bash
+docker-compose down -v --remove-orphans
 ```
 ## Используемые технологии:
 ```
