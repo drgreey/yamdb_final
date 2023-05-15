@@ -3,15 +3,10 @@ from django.core.validators import (
     MinValueValidator,
     RegexValidator,
 )
-
 from django.utils import timezone
-
 from rest_framework import serializers
-
 from .utils import check_email, check_role, check_user, send_mail_token
-
 from api_yamdb.settings import MAX_SCORE, MIN_SCORE
-
 from reviews.models import Category, Comment, Genre, Review, Title, User
 
 
