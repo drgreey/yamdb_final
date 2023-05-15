@@ -4,7 +4,6 @@ from django.db import models
 from .validators import year_validator
 from api_yamdb.settings import ADMIN, MAX_SCORE, MIN_SCORE, MODERATOR, USER
 
-
 class User(AbstractUser):
     username = models.CharField('Логин', max_length=150, unique=True)
     email = models.EmailField(max_length=254, unique=True)
