@@ -1,8 +1,11 @@
 from django.contrib.auth.tokens import default_token_generator
+
 from django.core.mail import send_mail
+
 from rest_framework import serializers
 
 from api_yamdb.settings import ADMIN, DEFAULT_FROM_EMAIL, MODERATOR, USER
+
 from reviews.models import User
 
 
