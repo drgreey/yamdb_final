@@ -11,10 +11,13 @@ from reviews.models import Category, Genre, Review, Title, User
 
 from .filters import TitleFilter
 from .mixins import CreateListDestroyViewSet
-from .permissions import (IsAdmin, IsAdminModeratorOwnerOrReadOnly, IsAdminOrReadOnly,)
-from .serializers import (CategorySerializer, CommentSerializer, GenreSerializer, GetTokenSerializer,
-                          ReviewSerializer, SendCodeSerializer, TitlePostPatchSerializer, TitleSerializer,
-                          UserEditMeSerializer, UserMeSerializer,)
+from .permissions import (IsAdmin, IsAdminModeratorOwnerOrReadOnly,
+                          IsAdminOrReadOnly,)
+from .serializers import (CategorySerializer, CommentSerializer,
+                          GenreSerializer, GetTokenSerializer,
+                          ReviewSerializer, SendCodeSerializer,
+                          TitlePostPatchSerializer, UserMeSerializer,
+                          UserEditMeSerializer, TitleSerializer,)
 
 
 class SendCodeView(APIView):
