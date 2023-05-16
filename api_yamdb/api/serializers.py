@@ -1,9 +1,11 @@
+from reviews.models import Category, Comment, Genre, Review, Title, User
 from rest_framework import serializers
 from django.utils import timezone
-from reviews.models import Category, Comment, Genre, Review, Title, User
+
 from django.core.validators import (MaxValueValidator,
                                     MinValueValidator,
                                     RegexValidator,)
+
 from api_yamdb.settings import MAX_SCORE, MIN_SCORE
 
 from .utils import check_email, check_role, check_user, send_mail_token
