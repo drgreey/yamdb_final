@@ -6,8 +6,8 @@ from .views import (CategoryViewSet, CommentViewSet,
                     ReviewViewSet, SendCodeView,
                     TitleViewSet, UserViewSet,)
 
-router_v1 = DefaultRouter()
 
+router_v1 = DefaultRouter()
 router_v1.register('users', UserViewSet)
 router_v1.register('categories', CategoryViewSet)
 router_v1.register('genres', GenreViewSet)

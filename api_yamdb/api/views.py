@@ -1,9 +1,9 @@
 from django.contrib.auth.tokens import default_token_generator
 from django.db.models import Avg
 from django_filters.rest_framework import DjangoFilterBackend
-from django.shortcuts import get_object_or_404
 from rest_framework import filters, permissions, status, viewsets
 from rest_framework.decorators import action
+from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from rest_framework_simplejwt.tokens import AccessToken
@@ -11,7 +11,8 @@ from reviews.models import Category, Genre, Review, Title, User
 
 from .filters import TitleFilter
 from .mixins import CreateListDestroyViewSet
-from .permissions import (IsAdmin, IsAdminModeratorOwnerOrReadOnly,
+from .permissions import (IsAdmin,
+                          IsAdminModeratorOwnerOrReadOnly,
                           IsAdminOrReadOnly,)
 from .serializers import (CategorySerializer, CommentSerializer,
                           GenreSerializer, GetTokenSerializer,

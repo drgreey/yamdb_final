@@ -1,8 +1,9 @@
 from django.utils import timezone
-from rest_framework import serializers
 from django.core.validators import (MaxValueValidator,
                                     MinValueValidator,
                                     RegexValidator,)
+from rest_framework import serializers
+
 from api_yamdb.settings import MAX_SCORE, MIN_SCORE
 from reviews.models import Category, Comment, Genre, Review, Title, User
 
