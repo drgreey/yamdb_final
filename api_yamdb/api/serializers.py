@@ -1,6 +1,6 @@
-from api_yamdb.settings import MAX_SCORE, MIN_SCORE
 from django.core.validators import (MaxValueValidator, MinValueValidator,
                                     RegexValidator)
+from api_yamdb.settings import MAX_SCORE, MIN_SCORE
 from django.utils import timezone
 from rest_framework import serializers
 from reviews.models import Category, Comment, Genre, Review, Title, User
