@@ -39,15 +39,19 @@ docker-compose exec web python manage.py createsuperuser
 Подгрузка статики:
 docker-compose exec web python manage.py collectstatic --no-input 
 ```
-### Команды для заполнения базы данными
-- Заполнить базу данными
-- Создать резервную копию данных:
-```bash
-docker-compose exec web python manage.py dumpdata > fixtures.json
+### Для выгрузки данных из дампа (резервной копии) в БД
 ```
-- Остановить и удалить неиспользуемые элементы инфраструктуры Docker:
-```bash
-docker-compose down -v --remove-orphans
+docker-compose exec web bash
+# Сброс БД, суперюзеры так же удалятся
+>>> python manage.py flush
+
+>>> python3 manage.py shell  
+        # выполнить в терминале:
+>>>>>> from django.contrib.contenttypes.models import ContentType
+>>>>>> ContentType.objects.all().delete()
+>>>>>> quit()
+
+>>> python manage.py loaddata dump.json
 ```
 ## Используемые технологии:
 ```
