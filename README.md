@@ -51,7 +51,7 @@ docker-compose exec web bash
 >>>>>> ContentType.objects.all().delete()
 >>>>>> quit()
 
->>> python manage.py loaddata dump.json
+>>> python manage.py loaddata fixtures.json
 ```
 ## Используемые технологии:
 ```
